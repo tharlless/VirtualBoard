@@ -12,6 +12,11 @@ document.querySelectorAll('.key').forEach(key => {
             isShift = !isShift;
         } else if (keyText === 'Space') {
             input.value += ' ';
+        } else if (keyText === '⌫') {
+            input.value = input.value.slice(0, -1);
+        } else if (keyText === 'Enter') {
+            alert(`Texto postado: ${input.value}`);
+            input.value = '';
         } else {
             let char = keyText;
             if (isCapsLock || isShift) {
